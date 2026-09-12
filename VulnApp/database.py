@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash
 
 
 BASE_DIR = Path(__file__).resolve().parent
-DATABASE_PATH = BASE_DIR / "instance" / "vuln_app.db"
+DATABASE_PATH = BASE_DIR / "vuln_app.db"
 
 
 def get_database():
@@ -39,7 +39,7 @@ def initialise_database():
             """,
             (
                 "student",
-                generate_password_hash("Password123!"),
+                generate_password_hash("pass123"),
                 "student@example.com",
             ),
         )
