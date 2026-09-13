@@ -16,11 +16,15 @@ Deliberately vulnerable Flask application used to demonstrate CSRF.
 
 ## Run the App
 ```powershell
+cd VulnApp
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 python database.py
-python app.py
+python app.py 
 ```
+
+`python database.py` only needs to be run once to initialise/reset the database. After that, they normally only need `python app.py`.
 
 Open `http://127.0.0.1:5000` and log in.
 
