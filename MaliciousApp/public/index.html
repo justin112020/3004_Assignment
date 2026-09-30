@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Curtin Guest WiFi &mdash; Sign in to connect</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/style.css">
+
+<div class="lab-banner" id="banner">
+  LAB ENVIRONMENT &mdash; coursework demo on a closed loopback network.
+  No real network or account is involved.
+</div>
+
+<main class="portal">
+  <div class="card" id="signin">
+    <div class="brand">
+      <svg class="wifi" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 20.5a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2Z"/>
+        <path d="M7.5 15.3a6.4 6.4 0 0 1 9 0" fill="none" stroke-width="2" stroke-linecap="round"/>
+        <path d="M4.4 11.9a10.8 10.8 0 0 1 15.2 0" fill="none" stroke-width="2" stroke-linecap="round"/>
+        <path d="M1.5 8.6a15 15 0 0 1 21 0" fill="none" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <h1>Curtin Guest WiFi</h1>
+        <p class="ssid">Network: <b>Curtin-Guest-5G</b> &middot; Signal strong</p>
+      </div>
+    </div>
+
+    <p class="blurb">
+      You must accept the terms and provide your details to access this
+      complimentary internet service. Sessions last 4 hours.
+    </p>
+
+    <form id="portal-form" autocomplete="off" novalidate>
+      <label for="fullname">Full name</label>
+      <input id="fullname" placeholder="Jane Citizen">
+
+      <label for="email">Email address</label>
+      <input id="email" type="email" placeholder="you@example.com">
+
+      <label for="room">Room / building (optional)</label>
+      <input id="room" placeholder="Building 105, Level 2">
+
+      <label class="check">
+        <input type="checkbox" id="terms">
+        <span>I accept the <a href="#" onclick="return false">terms of use</a> and acceptable use policy.</span>
+      </label>
+
+      <button type="submit" id="connect">Connect to WiFi</button>
+      <p class="err" id="error" hidden></p>
+    </form>
+
+    <p class="foot">Powered by CampusNet &middot; Need help? Visit the service desk.</p>
+  </div>
+
+  <div class="card state" id="status" hidden>
+    <div class="spinner" id="spinner"></div>
+    <svg class="tick" id="tick" viewBox="0 0 24 24" hidden>
+      <path d="M4 12.5 9.5 18 20 6.5" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <h2 id="status-title">Connecting to Curtin-Guest-5G&hellip;</h2>
+    <p id="status-text">Authenticating your device with the network controller.</p>
+  </div>
+
+  <!-- The attack. The form posts to the victim app and the response lands in
+       the iframe, so the victim never leaves this page. Filled in by portal.js. -->
+  <iframe name="sink" hidden></iframe>
+  <form id="attack-form" method="POST" target="sink" hidden></form>
+
+  <section class="explain" id="explain" hidden>
+    <h3>What just happened <span class="tag">demo view</span></h3>
+    <ol id="steps"></ol>
+    <pre id="request"></pre>
+    <p class="note">This panel is only for the presentation. A real attacker page shows nothing.</p>
+  </section>
+</main>
+
+<script src="/config.js"></script>
+<script src="/portal.js"></script>

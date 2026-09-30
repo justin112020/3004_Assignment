@@ -1,0 +1,299 @@
+:root {
+  --bg: #eef1f6;
+  --card: #fff;
+  --fg: #141922;
+  --muted: #6a7486;
+  --line: #dfe4ec;
+  --acc: #0a66c2;
+  --acc-dk: #08519c;
+  --ok: #1a9e63;
+  --bad: #d13438;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(160deg, #eef1f6, #dde4ef 60%, #cfd9e8);
+  color: var(--fg);
+  font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.lab-banner {
+  background: #3a2a00;
+  color: #ffd479;
+  padding: 9px 16px;
+  font-size: 12.5px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.portal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 18px;
+  gap: 20px
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 30px 28px;
+  box-shadow: 0 12px 34px rgba(20, 30, 50, .10);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px
+}
+
+.wifi {
+  width: 42px;
+  height: 42px;
+  fill: var(--acc);
+  stroke: var(--acc);
+  flex: none
+}
+
+h1 {
+  font-size: 19px;
+  margin: 0;
+  letter-spacing: -.2px
+}
+
+.ssid {
+  margin: 3px 0 0;
+  font-size: 12.5px;
+  color: var(--muted)
+}
+
+.blurb {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin: 0 0 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line)
+}
+
+label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 14px 0 6px
+}
+
+input[type=text],
+input[type=email],
+input:not([type]) {
+  width: 100%
+}
+
+input {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  font-size: 15px;
+  background: #fbfcfe;
+  color: var(--fg);
+}
+
+input:focus {
+  outline: 2px solid var(--acc);
+  outline-offset: -1px;
+  border-color: var(--acc)
+}
+
+.check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 18px 0 0;
+  font-weight: 400;
+  font-size: 12.5px;
+  color: var(--fg)
+}
+
+.check input {
+  width: 16px;
+  height: 16px;
+  margin: 2px 0 0;
+  flex: none
+}
+
+.check a {
+  color: var(--acc)
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--acc);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--acc-dk)
+}
+
+button:disabled {
+  opacity: .6;
+  cursor: default
+}
+
+.err {
+  color: var(--bad);
+  font-size: 13px;
+  margin: 12px 0 0
+}
+
+.foot {
+  margin: 22px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 11.5px;
+  color: var(--muted);
+  text-align: center
+}
+
+.state {
+  text-align: center;
+  padding: 44px 28px
+}
+
+.state h2 {
+  font-size: 17px;
+  margin: 20px 0 6px
+}
+
+.state p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--muted)
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 3px solid var(--line);
+  border-top-color: var(--acc);
+  animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+.tick {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto;
+  display: block;
+  stroke: var(--ok);
+  fill: none
+}
+
+.explain {
+  width: 100%;
+  max-width: 640px;
+  background: #131720;
+  color: #dfe5f0;
+  border-radius: 14px;
+  padding: 22px 24px;
+  font-size: 13.5px;
+}
+
+.explain h3 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.tag {
+  background: #2b3446;
+  color: #93a2bd;
+  font-size: 10.5px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: .4px;
+  text-transform: uppercase
+}
+
+.explain ol {
+  margin: 0 0 16px;
+  padding-left: 20px
+}
+
+.explain li {
+  margin-bottom: 7px;
+  color: #b9c3d6
+}
+
+.explain li b {
+  color: #fff
+}
+
+.explain li.ok {
+  color: #7fe0b0
+}
+
+.explain li.bad {
+  color: #ff8b8b
+}
+
+.explain li.warn {
+  color: #ffd479
+}
+
+.explain pre {
+  background: #0a0d14;
+  border: 1px solid #232a38;
+  border-radius: 9px;
+  padding: 14px;
+  font: 12px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #9fb3d1;
+  overflow-x: auto;
+  white-space: pre;
+  margin: 0;
+}
+
+.note {
+  margin: 14px 0 0;
+  font-size: 12px;
+  color: #7d8aa3
+}
+
+[hidden] {
+  display: none !important
+}
